@@ -1,0 +1,77 @@
+C:\Users\Franklin\Desktop\ApiRestUniversidadSolucion\ApiRestUniversidad\obj\Debug\net6.0\ApiRestUniversidad.csproj.AssemblyReference.cache
+C:\Users\Franklin\Desktop\ApiRestUniversidadSolucion\ApiRestUniversidad\obj\Debug\net6.0\ApiRestUniversidad.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Franklin\Desktop\ApiRestUniversidadSolucion\ApiRestUniversidad\obj\Debug\net6.0\ApiRestUniversidad.AssemblyInfoInputs.cache
+C:\Users\Franklin\Desktop\ApiRestUniversidadSolucion\ApiRestUniversidad\obj\Debug\net6.0\ApiRestUniversidad.AssemblyInfo.cs
+C:\Users\Franklin\Desktop\ApiRestUniversidadSolucion\ApiRestUniversidad\obj\Debug\net6.0\ApiRestUniversidad.csproj.CoreCompileInputs.cache
+C:\Users\Franklin\Desktop\ApiRestUniversidadSolucion\ApiRestUniversidad\obj\Debug\net6.0\ApiRestUniversidad.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Franklin\Desktop\ApiRestUniversidadSolucion\ApiRestUniversidad\obj\Debug\net6.0\ApiRestUniversidad.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Franklin\Desktop\ApiRestUniversidadSolucion\ApiRestUniversidad\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\Franklin\Desktop\ApiRestUniversidadSolucion\ApiRestUniversidad\bin\Debug\net6.0\appsettings.json
+C:\Users\Franklin\Desktop\ApiRestUniversidadSolucion\ApiRestUniversidad\bin\Debug\net6.0\ApiRestUniversidad.exe
+C:\Users\Franklin\Desktop\ApiRestUniversidadSolucion\ApiRestUniversidad\bin\Debug\net6.0\ApiRestUniversidad.deps.json
+C:\Users\Franklin\Desktop\ApiRestUniversidadSolucion\ApiRestUniversidad\bin\Debug\net6.0\ApiRestUniversidad.runtimeconfig.json
+C:\Users\Franklin\Desktop\ApiRestUniversidadSolucion\ApiRestUniversidad\bin\Debug\net6.0\ApiRestUniversidad.dll
+C:\Users\Franklin\Desktop\ApiRestUniversidadSolucion\ApiRestUniversidad\bin\Debug\net6.0\ApiRestUniversidad.pdb
+C:\Users\Franklin\Desktop\ApiRestUniversidadSolucion\ApiRestUniversidad\bin\Debug\net6.0\Humanizer.dll
+C:\Users\Franklin\Desktop\ApiRestUniversidadSolucion\ApiRestUniversidad\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\Franklin\Desktop\ApiRestUniversidadSolucion\ApiRestUniversidad\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Franklin\Desktop\ApiRestUniversidadSolucion\ApiRestUniversidad\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Franklin\Desktop\ApiRestUniversidadSolucion\ApiRestUniversidad\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Franklin\Desktop\ApiRestUniversidadSolucion\ApiRestUniversidad\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\Franklin\Desktop\ApiRestUniversidadSolucion\ApiRestUniversidad\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\Franklin\Desktop\ApiRestUniversidadSolucion\ApiRestUniversidad\bin\Debug\net6.0\MySqlConnector.dll
+C:\Users\Franklin\Desktop\ApiRestUniversidadSolucion\ApiRestUniversidad\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\Franklin\Desktop\ApiRestUniversidadSolucion\ApiRestUniversidad\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Franklin\Desktop\ApiRestUniversidadSolucion\ApiRestUniversidad\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Franklin\Desktop\ApiRestUniversidadSolucion\ApiRestUniversidad\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Franklin\Desktop\ApiRestUniversidadSolucion\ApiRestUniversidad\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\Franklin\Desktop\ApiRestUniversidadSolucion\ApiRestUniversidad\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\Franklin\Desktop\ApiRestUniversidadSolucion\ApiRestUniversidad\obj\Debug\net6.0\scopedcss\bundle\ApiRestUniversidad.styles.css
+C:\Users\Franklin\Desktop\ApiRestUniversidadSolucion\ApiRestUniversidad\obj\Debug\net6.0\ApiRestUniversidad.csproj.CopyComplete
+C:\Users\Franklin\Desktop\ApiRestUniversidadSolucion\ApiRestUniversidad\obj\Debug\net6.0\ApiRestUniversidad.dll
+C:\Users\Franklin\Desktop\ApiRestUniversidadSolucion\ApiRestUniversidad\obj\Debug\net6.0\refint\ApiRestUniversidad.dll
+C:\Users\Franklin\Desktop\ApiRestUniversidadSolucion\ApiRestUniversidad\obj\Debug\net6.0\ApiRestUniversidad.pdb
+C:\Users\Franklin\Desktop\ApiRestUniversidadSolucion\ApiRestUniversidad\obj\Debug\net6.0\ApiRestUniversidad.genruntimeconfig.cache
+C:\Users\Franklin\Desktop\ApiRestUniversidadSolucion\ApiRestUniversidad\obj\Debug\net6.0\ref\ApiRestUniversidad.dll
+C:\Users\Franklin\Desktop\ASP NET CORE\ApiRestUniversidadSolucion\ApiRestUniversidad\bin\Debug\net6.0\appsettings.Development.json
+C:\Users\Franklin\Desktop\ASP NET CORE\ApiRestUniversidadSolucion\ApiRestUniversidad\bin\Debug\net6.0\appsettings.json
+C:\Users\Franklin\Desktop\ASP NET CORE\ApiRestUniversidadSolucion\ApiRestUniversidad\bin\Debug\net6.0\ApiRestUniversidad.exe
+C:\Users\Franklin\Desktop\ASP NET CORE\ApiRestUniversidadSolucion\ApiRestUniversidad\bin\Debug\net6.0\ApiRestUniversidad.deps.json
+C:\Users\Franklin\Desktop\ASP NET CORE\ApiRestUniversidadSolucion\ApiRestUniversidad\bin\Debug\net6.0\ApiRestUniversidad.runtimeconfig.json
+C:\Users\Franklin\Desktop\ASP NET CORE\ApiRestUniversidadSolucion\ApiRestUniversidad\bin\Debug\net6.0\ApiRestUniversidad.dll
+C:\Users\Franklin\Desktop\ASP NET CORE\ApiRestUniversidadSolucion\ApiRestUniversidad\bin\Debug\net6.0\ApiRestUniversidad.pdb
+C:\Users\Franklin\Desktop\ASP NET CORE\ApiRestUniversidadSolucion\ApiRestUniversidad\bin\Debug\net6.0\Humanizer.dll
+C:\Users\Franklin\Desktop\ASP NET CORE\ApiRestUniversidadSolucion\ApiRestUniversidad\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.dll
+C:\Users\Franklin\Desktop\ASP NET CORE\ApiRestUniversidadSolucion\ApiRestUniversidad\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Abstractions.dll
+C:\Users\Franklin\Desktop\ASP NET CORE\ApiRestUniversidadSolucion\ApiRestUniversidad\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Design.dll
+C:\Users\Franklin\Desktop\ASP NET CORE\ApiRestUniversidadSolucion\ApiRestUniversidad\bin\Debug\net6.0\Microsoft.EntityFrameworkCore.Relational.dll
+C:\Users\Franklin\Desktop\ASP NET CORE\ApiRestUniversidadSolucion\ApiRestUniversidad\bin\Debug\net6.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\Franklin\Desktop\ASP NET CORE\ApiRestUniversidadSolucion\ApiRestUniversidad\bin\Debug\net6.0\Microsoft.OpenApi.dll
+C:\Users\Franklin\Desktop\ASP NET CORE\ApiRestUniversidadSolucion\ApiRestUniversidad\bin\Debug\net6.0\MySqlConnector.dll
+C:\Users\Franklin\Desktop\ASP NET CORE\ApiRestUniversidadSolucion\ApiRestUniversidad\bin\Debug\net6.0\Pomelo.EntityFrameworkCore.MySql.dll
+C:\Users\Franklin\Desktop\ASP NET CORE\ApiRestUniversidadSolucion\ApiRestUniversidad\bin\Debug\net6.0\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\Franklin\Desktop\ASP NET CORE\ApiRestUniversidadSolucion\ApiRestUniversidad\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\Franklin\Desktop\ASP NET CORE\ApiRestUniversidadSolucion\ApiRestUniversidad\bin\Debug\net6.0\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\Franklin\Desktop\ASP NET CORE\ApiRestUniversidadSolucion\ApiRestUniversidad\obj\Debug\net6.0\ApiRestUniversidad.csproj.AssemblyReference.cache
+C:\Users\Franklin\Desktop\ASP NET CORE\ApiRestUniversidadSolucion\ApiRestUniversidad\obj\Debug\net6.0\ApiRestUniversidad.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Franklin\Desktop\ASP NET CORE\ApiRestUniversidadSolucion\ApiRestUniversidad\obj\Debug\net6.0\ApiRestUniversidad.AssemblyInfoInputs.cache
+C:\Users\Franklin\Desktop\ASP NET CORE\ApiRestUniversidadSolucion\ApiRestUniversidad\obj\Debug\net6.0\ApiRestUniversidad.AssemblyInfo.cs
+C:\Users\Franklin\Desktop\ASP NET CORE\ApiRestUniversidadSolucion\ApiRestUniversidad\obj\Debug\net6.0\ApiRestUniversidad.csproj.CoreCompileInputs.cache
+C:\Users\Franklin\Desktop\ASP NET CORE\ApiRestUniversidadSolucion\ApiRestUniversidad\obj\Debug\net6.0\ApiRestUniversidad.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Franklin\Desktop\ASP NET CORE\ApiRestUniversidadSolucion\ApiRestUniversidad\obj\Debug\net6.0\ApiRestUniversidad.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Franklin\Desktop\ASP NET CORE\ApiRestUniversidadSolucion\ApiRestUniversidad\obj\Debug\net6.0\staticwebassets.build.json
+C:\Users\Franklin\Desktop\ASP NET CORE\ApiRestUniversidadSolucion\ApiRestUniversidad\obj\Debug\net6.0\staticwebassets.development.json
+C:\Users\Franklin\Desktop\ASP NET CORE\ApiRestUniversidadSolucion\ApiRestUniversidad\obj\Debug\net6.0\scopedcss\bundle\ApiRestUniversidad.styles.css
+C:\Users\Franklin\Desktop\ASP NET CORE\ApiRestUniversidadSolucion\ApiRestUniversidad\obj\Debug\net6.0\ApiRestUniversidad.csproj.CopyComplete
+C:\Users\Franklin\Desktop\ASP NET CORE\ApiRestUniversidadSolucion\ApiRestUniversidad\obj\Debug\net6.0\ApiRestUniversidad.dll
+C:\Users\Franklin\Desktop\ASP NET CORE\ApiRestUniversidadSolucion\ApiRestUniversidad\obj\Debug\net6.0\refint\ApiRestUniversidad.dll
+C:\Users\Franklin\Desktop\ASP NET CORE\ApiRestUniversidadSolucion\ApiRestUniversidad\obj\Debug\net6.0\ApiRestUniversidad.pdb
+C:\Users\Franklin\Desktop\ASP NET CORE\ApiRestUniversidadSolucion\ApiRestUniversidad\obj\Debug\net6.0\ApiRestUniversidad.genruntimeconfig.cache
+C:\Users\Franklin\Desktop\ASP NET CORE\ApiRestUniversidadSolucion\ApiRestUniversidad\obj\Debug\net6.0\ref\ApiRestUniversidad.dll
+C:\Users\Franklin\Desktop\ASP NET CORE\ApiRestUniversidadSolucion\ApiRestUniversidad\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\Franklin\Desktop\ASP NET CORE\ApiRestUniversidadSolucion\ApiRestUniversidad\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\Franklin\Desktop\ASP NET CORE\ApiRestUniversidadSolucion\ApiRestUniversidad\obj\Debug\net6.0\staticwebassets\msbuild.ApiRestUniversidad.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\Franklin\Desktop\ASP NET CORE\ApiRestUniversidadSolucion\ApiRestUniversidad\obj\Debug\net6.0\staticwebassets\msbuild.build.ApiRestUniversidad.props
+C:\Users\Franklin\Desktop\ASP NET CORE\ApiRestUniversidadSolucion\ApiRestUniversidad\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.ApiRestUniversidad.props
+C:\Users\Franklin\Desktop\ASP NET CORE\ApiRestUniversidadSolucion\ApiRestUniversidad\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.ApiRestUniversidad.props
+C:\Users\Franklin\Desktop\ASP NET CORE\ApiRestUniversidadSolucion\ApiRestUniversidad\obj\Debug\net6.0\staticwebassets.pack.json
