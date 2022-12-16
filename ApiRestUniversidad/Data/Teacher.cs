@@ -24,7 +24,7 @@ namespace ApiRestUniversidad.Data
         [Column("lastNames")]
         [StringLength(255)]
         public string LastNames { get; set; } = null!;
-
+        [JsonIgnore]
         [InverseProperty("IdTeacherNavigation")]
         public virtual ICollection<Recordinscriptionteacher> Recordinscriptionteachers { get; set; }
     }

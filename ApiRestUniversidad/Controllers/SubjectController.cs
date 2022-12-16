@@ -17,7 +17,10 @@ namespace ApiRestUniversidad.Controllers
         {
             _context= context;
         }
-
+        /// <summary>
+        /// Retorna la lista de todos las materias registrafas
+        /// </summary>
+        /// <returns></returns>
         [HttpGet]
         public async  Task<IActionResult> GetAll()
         {
@@ -25,17 +28,30 @@ namespace ApiRestUniversidad.Controllers
 
             return Ok(data);
         }
+
+        /// <summary>
+        /// Agrega una nueva materia
+        /// </summary>
+        /// <param name="subject">Datos de la materia</param>
+        /// <returns>Mensaje de exito o error</returns>
         [HttpPost]
-        public async Task<IActionResult> Add([FromBody] string name)
+        public async Task<IActionResult> Add([FromHeader] string subject)
         {
-            var subject =await _context.Subjects.Where(x => x.NameSubject == name).SingleOrDefaultAsync();
-            if (subject != null)
-                return BadRequest("Ya existe un registro para " + name.ToUpper());
-            subject.NameSubject = name.ToUpper();
-            await _context.AddAsync(subject);
+            
+            if ( await _context.Subjects.AnyAsync(z=>z.NameSubject.Equals(subject)))
+                return BadRequest("Ya existe un registro para " + subject.ToUpper());
+
+            Subject subjectExist = new  Subject{ NameSubject = subject.ToUpper() };
+
+            await _context.AddAsync(subjectExist);
             await _context.SaveChangesAsync();
             return Ok("Registro agregado con exito");
         }
+        /// <summary>
+        /// Actualiza un registro de Materia
+        /// </summary>
+        /// <param name="subject">Datos de materia</param>
+        /// <returns>Mensaje de exito o error</returns>
         [HttpPut]
         public async Task<IActionResult> Update([FromBody ]Subject subject)
         {
@@ -48,6 +64,11 @@ namespace ApiRestUniversidad.Controllers
             await _context.SaveChangesAsync();
             return Ok("Registro actualizado con exito");
         }
+        /// <summary>
+        /// Elimina un registro Materia a partir del id 
+        /// </summary>
+        /// <param name="id">Id del registro Materia </param>
+        /// <returns></returns>
         [HttpDelete]
         public async Task<IActionResult> delete(int id)
         {

@@ -37,8 +37,8 @@ namespace ApiRestUniversidad.Controllers
         [HttpGet("GetByIdSubject/{idSubject}")]
         public async Task<IActionResult> GetByIdSubject(int? idSubject)
         {
-            var data = await _context.Subjects.FindAsync(idSubject);
-            if (data == null)
+            
+            if (!await _context.Subjects.AnyAsync(x=>x.IdSubject== idSubject))
                 return NotFound(new { message = "El id de Materia no se encuentra registrado" });
 
             var query = from inscriptionTeacher in _context.Recordinscriptionteachers
@@ -59,8 +59,7 @@ namespace ApiRestUniversidad.Controllers
         [HttpGet("GetByIdTeacher/{idTeacher}")]
         public async Task<IActionResult> GetByIdTeacher(int idTeacher)
         {
-            var data = await _context.Teachers.FindAsync(idTeacher);
-            if (data == null)
+            if (!await _context.Teachers.AnyAsync(x=>x.IdTeacher== idTeacher)) 
                 return NotFound(new { message = "El id de Maestro no se encuentra registrado" });
 
             var query = from inscriptionTeacher in _context.Recordinscriptionteachers
@@ -82,11 +81,11 @@ namespace ApiRestUniversidad.Controllers
         {
             //validar que id teacher e id materia sea valido
 
-            var teacherExist = _context.Teachers.FindAsync(recordTeacher.IdTeacher);
-            if (teacherExist == null)
+            
+            if (! await _context.Teachers.AnyAsync(x=>x.IdTeacher== recordTeacher.IdTeacher))
                 return NotFound(new { message = "El id de Maestro no ha sido encontrado" });
-            var subjectExist = _context.Subjects.FindAsync(recordTeacher.IdSubject);
-            if (subjectExist == null)
+            
+            if (! await _context.Subjects.AnyAsync(x=>x.IdSubject== recordTeacher.IdSubject))
                 return NotFound(new { message = "El id de la materia no ha sido encontrado" });
 
             await _context.AddAsync(recordTeacher);
@@ -99,23 +98,22 @@ namespace ApiRestUniversidad.Controllers
         {
             //validar que id teacher e id materia sea valido
 
-            var teacherExist = _context.Teachers.FindAsync(recordTeacher.IdTeacher);
-            if (teacherExist == null)
-                return NotFound(new { message = "El id del maestro no ha sido encontrado" });
-            var subjectExist = _context.Subjects.FindAsync(recordTeacher.IdSubject);
-            if (subjectExist == null)
+            if (!await _context.Teachers.AnyAsync(x => x.IdTeacher == recordTeacher.IdTeacher))
+                return NotFound(new { message = "El id de Maestro no ha sido encontrado" });
+
+            if (!await _context.Subjects.AnyAsync(x => x.IdSubject == recordTeacher.IdSubject))
                 return NotFound(new { message = "El id de la materia no ha sido encontrado" });
 
             var data = _mapper.Map<Recordinscriptionteacher>(recordTeacher);
-            await _context.AddAsync(recordTeacher);
+             _context.Update(data);
             await _context.SaveChangesAsync();
 
-            return Ok(new { message = "Registro agregado con exito" });
+            return Ok(new { message = "Registro actualizado con exito" });
         }
         [HttpDelete]
-        public async Task<IActionResult> Delete([FromBody] int id)
+        public async Task<IActionResult> Delete([FromHeader] int id)
         {
-            var data = _context.Recordinscriptionteachers.FindAsync(id);
+            var data = await _context.Recordinscriptionteachers.FindAsync(id);
             if (data == null)
                 return NotFound(new { message = "EL id ingresado no ha sido encontrado" });
 

@@ -15,29 +15,54 @@ namespace ApiRestUniversidad.Controllers
         {
             _context = context;
         }
-
+        /// <summary>
+        /// Regresa un listado de todas las facultades de la universidad
+        /// </summary>
+        /// <returns>lista de facultades</returns>
         [HttpGet]
-        public async Task<IActionResult> GetAll()
+        public async Task<IActionResult> GetAll() =>  Ok(await _context.Faculties.OrderByDescending(x=>x.IdFaculty).ToListAsync());
+
+        /// <summary>
+        /// Retorna una faculta pero pide un argumento que es el identificador 
+        /// </summary>
+        /// <param name="id">indice de facultad</param>
+        /// <returns>Datos de la facultad o mensaje de error</returns>
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(int id)
         {
-           List <Faculty> data = await _context.Faculties.ToListAsync();
-            return Ok(data);
+            return await _context.Faculties.FindAsync(id) is Faculty faculty ? Ok(faculty) :
+                NotFound(new { message = "El id ingresado no ha sido encontrado" });
         }
+
+
+        /// <summary>
+        /// Anade una nueva facultad a la base de datos
+        /// </summary>
+        /// <param name="name">Nombre para una nueva facultad</param>
+        /// <returns>Mensaje de exito o error</returns>
+        [ProducesResponseType(StatusCodes.Status201Created)]
         [HttpPost]
         public async Task<IActionResult> Add(string name)
         {
             string nameF = name.Trim().ToUpper();
             var val = await _context.Faculties.Where(x => x.NameFaculty == nameF).SingleOrDefaultAsync();
-            if (val== default)
+            if (val == default)
             {
                 Faculty newFa = new Faculty { NameFaculty = name.ToUpper() };
                 await _context.AddAsync(newFa);
-               await  _context.SaveChangesAsync();
+                await _context.SaveChangesAsync();
 
-                 return Ok("Informacion agregada con exito");
+                return Ok("Informacion agregada con exito");
             }
-           
-            return StatusCode(404, "Ya existen registros con el mismo valor de la informacion introducidad");
+
+            return NotFound(new {message="Ya existen registros con el mismo valor de la informacion introducida"});
         }
+        /// <summary>
+        /// Actualiza la facultad apartir de los datos de la facultad
+        /// </summary>
+        /// <param name="data">Contiene los datos de la facultad</param>
+        /// <returns>Mensaje de exito o error</returns>
+        [ProducesResponseType(StatusCodes.Status200OK)]
         [HttpPut]
         public async Task<IActionResult> Update([FromBody] Faculty data)
         {
@@ -49,19 +74,23 @@ namespace ApiRestUniversidad.Controllers
                 await _context.SaveChangesAsync();
                 return Ok("Registro actualizado con exito");
             }
-            return StatusCode(404, "El id ingresado no coincide con ningun registro");
+            return NotFound(new { message = "El id ingresado no coincide con ningun registro"});
         }
-        [HttpDelete]
-        public async Task<IActionResult> Delete(int id)
-        {
-            var faculty = await _context.Faculties.Where(x => x.IdFaculty == id).SingleOrDefaultAsync();
-            if(faculty!= default)
-            {
-                _context.Faculties.Remove(faculty);
-                await _context.SaveChangesAsync();
-                return Ok("EL registro se ha eliminado con exito");
-            }
-            return StatusCode(404, "El id ingresado no coincide con ningun regisitro");
-        }
+
+        // Se desabilito porque debe existir un eliminacion en cascada por lo cual no va a ser posible eliminar registros de Faculy
+        // por el momento
+  
+        //[HttpDelete]
+        //public async Task<IActionResult> Delete(int id)
+        //{
+        //    var faculty = await _context.Faculties.Where(x => x.IdFaculty == id).SingleOrDefaultAsync();
+        //    if (faculty != default)
+        //    {
+        //        _context.Faculties.Remove(faculty);
+        //        await _context.SaveChangesAsync();
+        //        return Ok("EL registro se ha eliminado con exito");
+        //    }
+        //    return StatusCode(404, "El id ingresado no coincide con ningun regisitro");
+        //}
     }
 }

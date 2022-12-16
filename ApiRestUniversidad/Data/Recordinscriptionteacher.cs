@@ -21,13 +21,16 @@ namespace ApiRestUniversidad.Data
         [Column("idTeacher", TypeName = "int(11)")]
         public int IdTeacher { get; set; }
         [Column("date", TypeName = "datetime")]
+        [JsonIgnore]
         public DateTime Date { get; set; } = DateTime.Now;
-
+        [JsonIgnore]
         [ForeignKey("IdSubject")]
         [InverseProperty("Recordinscriptionteachers")]
-        public virtual Subject IdSubjectNavigation { get; set; } = null!;
+
+        public virtual Subject? IdSubjectNavigation { get; set; } = null!;
+        [JsonIgnore]
         [ForeignKey("IdTeacher")]
         [InverseProperty("Recordinscriptionteachers")]
-        public virtual Teacher IdTeacherNavigation { get; set; } = null!;
+        public virtual Teacher? IdTeacherNavigation { get; set; } = null!;
     }
 }

@@ -1,8 +1,6 @@
 ﻿using ApiRestUniversidad.DTO;
-using AutoMapper;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using ApiRestUniversidad.Data;
 
 namespace ApiRestUniversidad.Controllers
@@ -11,6 +9,7 @@ namespace ApiRestUniversidad.Controllers
     [ApiController]
     public class CareersController : ControllerBase
     {
+        //carreras por facultad
         private readonly UniversidadContext _context;
         private readonly IMapper _mapper;
 
@@ -19,19 +18,56 @@ namespace ApiRestUniversidad.Controllers
             _context = context;
             _mapper = mapper;
         }
+
+        /// <summary>
+        /// Obtiene todas las carreras de la universidad
+        /// </summary>
+        /// <returns>Listado de Libros</returns>
+        [ProducesResponseType(typeof(List<Career>), 200)]
         [HttpGet]
         public async Task<IActionResult> GetAll()
         {
-            //var data = await _context.Careers.ToListAsync();
             //uso del join para traer el id de la Facultad Correspondiente a cada registro de Carrera
             var data = await _context.Careers.Join(_context.Faculties, career => career.IdFaculty, faculty => faculty.IdFaculty,
-                (careers, faculties)=>new
+                (careers, faculties) => new
                 {
                     careers, faculties
                 }).ToListAsync();
             return Ok(data);
         }
-        //usar viewModels
+
+        /// <summary>
+        /// obtiene informacion de una carrera en especifico
+        /// </summary>
+        /// <param name="id">De tipo numerico</param>
+        /// <returns>Una carrera</returns>
+        [ProducesResponseType(typeof(Career), 200)]
+        [HttpGet("{id}")]
+        public async Task<IActionResult> GetById(int id)
+        {
+
+            var data = await _context.Careers.FindAsync(id);
+            if (data == null)
+                return NotFound(new { message = "El id no ha sido encontrado " });
+
+            var infoFaculty = await _context.Faculties.FindAsync(data.IdFaculty);
+
+            return Ok(new
+            {
+                data,
+                faculty = infoFaculty.NameFaculty
+            });
+        }
+
+
+
+        /// <summary>
+        /// Agrega una nueva carrera y esta asociada a una universidad, por lo que 
+        /// es importante conocer el id de la Facultad
+        /// </summary>
+        /// <param name="career">Informacion de la carrera</param>
+        /// <returns></returns>
+        [ProducesResponseType(typeof(Career), 200)]
         [HttpPost]
         public async Task<IActionResult> Add([FromBody] CareerDTO career)
         {
@@ -47,36 +83,52 @@ namespace ApiRestUniversidad.Controllers
                     var data = _mapper.Map<Career>(career);
                     _context.Add(data);
                     await _context.SaveChangesAsync();
-                    return Ok("Registro agregado con exito");
+                    return Ok(new {data,message="registro agreado con exito"});
                 }
 
-                return BadRequest("El id de Facultad ingresado no existe ");
+                return NotFound(new { message= "El id de Facultad ingresado no existe " });
 
             }
-            return BadRequest("El nombre de la carrera ya se encuentra registrado");
+            return BadRequest(new { message="El nombre de la carrera ya se encuentra registrado"});
 
         }
 
+        /// <summary>
+        /// Actualizar la informacion de carrera
+        /// </summary>
+        /// <param name="data">contiene la nueva informacion de la carrera</param>
+        /// <param name="id">El indice del registro</param>
+        /// <returns>mensaje de exito o error</returns>
+        [ProducesResponseType(StatusCodes.Status200OK)]
         [HttpPut]
-        public  async Task  <IActionResult>  Update([FromBody]Career data)
+        public  async Task  <IActionResult>  Update([FromBody]CareerDTO data, [FromQuery] int id)
         {
-            var searchCareer=await _context.Careers.Where(x => x.IdCareer == data.IdCareer).SingleOrDefaultAsync();
+            var searchCareer=await _context.Careers.Where(x => x.IdCareer == id).SingleOrDefaultAsync();
 
             if (searchCareer==null)
             {
-                searchCareer.NameCareer = data.NameCareer;
-                await _context.SaveChangesAsync();
-                return Ok("Registro Actualizado con exito");
+                return BadRequest(new { message = "El id ingresado no existe" });
             }
-            return BadRequest("El id ingresado no existe");
+            searchCareer.NameCareer = data.NameCareer;
+            await _context.SaveChangesAsync();
+            return Ok(new { message = "Registro actualizado con exito" });
+            
         }
 
+
+        /// <summary>
+        /// Elimina un registro asociado al id ingresado, pero antes se valida si existe tal id
+        /// </summary>
+        /// <param name="id">Indice del registro</param>
+        /// <returns></returns>
+        [ProducesResponseType(StatusCodes.Status200OK)]
         [HttpDelete]
-        public async Task<IActionResult> Delete(int id){
+        public async Task<IActionResult> Delete([FromQuery]int id){
             var career =await _context.Careers.Where(x=>x.IdCareer== id).SingleOrDefaultAsync();
             if (career != default)
             {
                 _context.Remove(career);
+                await _context.SaveChangesAsync();
                 return Ok("registro eliminado con exito");
             }
             return BadRequest("El id ingresado no se encuentra registrado");

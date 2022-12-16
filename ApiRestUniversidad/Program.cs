@@ -13,7 +13,11 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 var cad = builder.Configuration.GetConnectionString("MySqlConnection");
 var serverVersion = new MariaDbServerVersion(new Version(10,4,12));
-builder.Services.AddDbContextPool<UniversidadContext>(x => x.UseMySql(cad,serverVersion));
+builder.Services.AddDbContextPool<UniversidadContext>(x => 
+{
+    x.UseMySql(cad, serverVersion);
+    //x.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking); 
+});
 builder.Services.AddAutoMapper(typeof(Program));
 builder.Services.AddControllersWithViews();
 

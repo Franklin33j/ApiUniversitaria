@@ -39,11 +39,11 @@ namespace ApiRestUniversidad.Data
         [JsonIgnore]
         [ForeignKey("IdStudent")]
         [InverseProperty("Ratings")]
-        public virtual Student IdStudentNavigation { get; set; } = null!;
+        public virtual Student? IdStudentNavigation { get; set; } = null!;
         [ForeignKey("IdSubject")]
         [InverseProperty("Ratings")]
         [JsonIgnore]
-        public virtual Subject IdSubjectNavigation { get; set; } = null!;
+        public virtual Subject? IdSubjectNavigation { get; set; } = null!;
         
         
     }

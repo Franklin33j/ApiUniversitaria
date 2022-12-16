@@ -12,7 +12,7 @@ namespace ApiRestUniversidad.DTO
             CreateMap<StudentDTO, Student>();
             CreateMap<TeacherDTO, Teacher>();
             CreateMap<RatingDTO, Rating>();
-            CreateMap<InscriptionTeacherDTO, Recordinscriptionstudent>();
+            CreateMap<InscriptionTeacherDTO, Recordinscriptionteacher>();
             CreateMap<InscriptionStudentDTO, Recordinscriptionstudent>();        }
     }
 }

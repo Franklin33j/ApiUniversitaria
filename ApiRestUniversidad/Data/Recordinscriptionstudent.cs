@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 using Microsoft.EntityFrameworkCore;
 
 namespace ApiRestUniversidad.Data
@@ -11,6 +12,7 @@ namespace ApiRestUniversidad.Data
     [Index("IdSubject", Name = "recordInscriptionStudents_fk1")]
     public partial class Recordinscriptionstudent
     {
+        [JsonIgnore]
         [Key]
         [Column("idRecord", TypeName = "int(11)")]
         public int IdRecord { get; set; }
@@ -19,13 +21,15 @@ namespace ApiRestUniversidad.Data
         [Column("idSubject", TypeName = "int(11)")]
         public int IdSubject { get; set; }
         [Column("date", TypeName = "datetime")]
+        [JsonIgnore]
         public DateTime Date { get; set; }= DateTime.Now;
-
+        [JsonIgnore]
         [ForeignKey("IdStudent")]
         [InverseProperty("Recordinscriptionstudents")]
-        public virtual Student IdStudentNavigation { get; set; } = null!;
+        public virtual Student? IdStudentNavigation { get; set; } = null!;
+        [JsonIgnore]
         [ForeignKey("IdSubject")]
         [InverseProperty("Recordinscriptionstudents")]
-        public virtual Subject IdSubjectNavigation { get; set; } = null!;
+        public virtual Subject? IdSubjectNavigation { get; set; } = null!;
     }
 }
